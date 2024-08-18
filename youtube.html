@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>youtube subscribe button</title>
+</head>
+<body>
+    <button id="subscribe" type="text">subscribe</button>
+
+    <script>
+        console.log('script started')
+        let subscribeButton = document.querySelector('#subscribe');
+        let subscribed = subscribeButton.innerHTML === 'unsubscribe';
+
+        document.querySelector('#subscribe').addEventListener('click', (event)=> {
+            console.log(subscribed)
+            if (subscribed) {
+                subscribed = false;
+                subscribeButton.innerHTML = 'subscribe';
+            }
+            else if (!subscribed) {
+                subscribed = true;
+                document.querySelector('#subscribe').innerHTML = 'unsubscribe';
+            }
+        })
+
+    </script>
+</body>
+</html>
