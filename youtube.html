@@ -4,22 +4,25 @@
     <title>youtube subscribe button</title>
 </head>
 <body>
-    <button id="subscribe" type="text">subscribe</button>
+    <button id="subscribe" type="text"></button>
 
     <script>
-        console.log('script started')
         let subscribeButton = document.querySelector('#subscribe');
-        let subscribed = subscribeButton.innerHTML === 'unsubscribe';
+        let isSubscribed = localStorage.getItem('isSubscribed') == 'true' || false;
 
-        document.querySelector('#subscribe').addEventListener('click', (event)=> {
-            console.log(subscribed)
-            if (subscribed) {
-                subscribed = false;
-                subscribeButton.innerHTML = 'subscribe';
+        if (isSubscribed) subscribeButton.innerHTML = 'Unsubscribe';
+        else subscribeButton.innerHTML = 'Subscribe';
+
+        subscribeButton.addEventListener('click', (event) => {
+            if (isSubscribed) {
+                isSubscribed = false;
+                subscribeButton.innerHTML = 'Subscribe';
+                localStorage.setItem('isSubscribed', isSubscribed);
             }
-            else if (!subscribed) {
-                subscribed = true;
-                document.querySelector('#subscribe').innerHTML = 'unsubscribe';
+            else {
+                isSubscribed = true;
+                document.querySelector('#subscribe').innerHTML = 'Unsubscribe';
+                localStorage.setItem('isSubscribed', isSubscribed);
             }
         })
 
