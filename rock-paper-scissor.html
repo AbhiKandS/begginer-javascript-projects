@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h2>Rock Paper Scissor</h2>
+
+    <br>
+    <button id="restart">Restart</button>
+
+    <br><br>
+    <button class="RPS" id="rock">Rock</button> 
+    <button class="RPS" id="paper">Paper</button>
+    <button class="RPS" id="scissor">Scissor</button>
+
+    <br><br>
+    <table>
+        <thead>
+            <tr>
+                <th>You</th>
+                <th>Computer</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr id="choice">
+            </tr>
+        </tbody>
+    </table>
+    
+    <p id="result"></p>
+    
+    <table>
+        <thead>
+            <tr>
+            <td>Wins</td>
+            <td>Loses</td>
+            <td>Draws</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr id="score"></tr>
+        </tbody>
+    </table>
+    
+    <br>
+
+
+    <script src="./rock-paper-scissor.js"></script>
+    </body>
+    
+    </html>
