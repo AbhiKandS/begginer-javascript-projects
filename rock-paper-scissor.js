@@ -11,12 +11,6 @@ let win = parseInt(localStorage.getItem('win')) || 0;
 let lose = parseInt(localStorage.getItem('lose')) || 0;
 let playerChoice, computerChoice;
 
-document.querySelector('#score').innerHTML = `
-    <td>${win}</td>
-    <td>${lose}</td>
-    <td>${draw}</td>
-    `;
-
 document.querySelector('#restart').addEventListener('click', () => { restartGame() });
 
 for (const choice of RPS) {
