@@ -4,7 +4,7 @@ displayTodoList();
 
 document.querySelector('#add-button').addEventListener('click', ()=>{
     addTodoToArray();
-    displayTodoList();
+    window.location.reload();
 })
 
 function addTodoToArray() {
@@ -36,6 +36,7 @@ function displayTodoList() {
     document.querySelectorAll('.remove-button').forEach((button)=> {
         button.addEventListener('click', (event)=> {
             removeItem(event);
+            window.location.reload();
         })
     })
 }
@@ -43,18 +44,8 @@ function displayTodoList() {
 function removeItem(event) {
     let buttons = document.querySelectorAll('.remove-button');
     let dataIndex = Array.from(buttons).indexOf(event.target);
-    let item = document.querySelector(`.todo-item:nth-of-type(${dataIndex+1})`);
-    if (!item) return;
-    
-    let name = item.querySelectorAll('td');
-    name = name[0].innerHTML;
-    console.log(name);
 
-    todo = todo.filter(i => i.name !== name)
+    todo.splice(dataIndex,1);
     let jsonTodo = JSON.stringify(todo);
     localStorage.setItem('todo', jsonTodo);
-
-    item.remove();
-
-    displayTodoList();
 }
