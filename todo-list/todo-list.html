@@ -1,22 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
     <title>Document</title>
 </head>
+
 <body>
     <h2>Todo List</h2>
     <br>
-        
     <br><br><br>
-    
+
     <table>
         <thead>
-            <tr>
-                <th>To-do</th>
-                <th>Date</th>
-                <th></th>
+            <tr id="thead">
+                <th class="col-name">To-do</th>
+                <th class="col-date">Date</th>
+                <th class="col-delete">Delete</th>
+            </tr>
+            <tr id="input">
+                <th class="col-name"><input type="text" placeholder="What would you like to do?" id="todo-name"></th>
+                <th class="col-date"><input type="date" placeholder="time" id="todo-date"></th>
+                <th class="col-delete"><button id="add-button">+</button></th>
+
             </tr>
             <tr>
 <th><input type="text" placeholder="What would you like to do?" id="todo-name"></th>
@@ -31,4 +39,5 @@
 
     <script src="./todo-list.js"></script>
 </body>
+
 </html>

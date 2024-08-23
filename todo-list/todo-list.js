@@ -24,10 +24,10 @@ function addTodoToArray() {
 function displayTodoList() {
     let html = '';
     for (let i = 0; i < todo.length; i++) {
-        html += `<tr class="todo-item">
-        <td>${todo[i].name}</td>
-        <td>${todo[i].date}</td>
-        <td><button class="remove-button">-</button></td>
+        html += `<tr class="row">
+        <td class="col-name">${todo[i].name}</td>
+        <td class="col-date">${todo[i].date}</td>
+        <td class="col-delete"><button class="remove-button">-</button></td>
         </tr>`
     }
 
